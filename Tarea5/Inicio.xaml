@@ -16,7 +16,7 @@
                 <ListView x:Name="ListElements">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Nombre}" Detail="{Binding Descripcion}" />
+                            <TextCell Text="{Binding Nombre}" Detail="{Binding Descripcion}"  />
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
@@ -32,7 +32,43 @@
 
         <ContentPage.Content>
             <StackLayout>
-                <Label Text="Aquí va el formulario." />
+                
+                <Label Text=" " FontSize="Medium" />
+                <Label Text="Información Personal" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Label Text=" " FontSize="Medium" />
+                
+                
+                <Label Text=" Nombre" FontSize="Medium" />
+                <Entry x:Name="Nombre" Placeholder="Ej: Juan"/>
+
+                <Label Text=" Apellido" FontSize="Medium" />
+                <Entry x:Name="Apellido" Placeholder="Ej: Pérez"/>
+
+                <Label Text=" Nacionalidad" FontSize="Medium" />
+                <Entry x:Name="Nacionalidad" Placeholder="Ej: dominicano"/>
+
+                <Label Text=" Fecha de nacimiento" FontSize="Medium" />
+                <DatePicker Format="D" VerticalOptions="CenterAndExpand" x:Name="Fecha" />
+
+                <Label Text=" Estado civíl" FontSize="Medium" />
+                <Picker Title="Seleccione una opción"
+                         x:Name="picker1">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Soltero</x:String>
+                            <x:String>Casado</x:String>
+                            <x:String>Divorciado</x:String>
+                            <x:String>Otros</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <StackLayout Grid.Row="1" Padding="30,20">
+                    <Button x:Name="Guardar" Text="Guardar" BackgroundColor="Blue" TextColor="White" BorderWidth="50"
+                            Clicked="Guardar_Clicked"
+                            />
+                </StackLayout>
+
+
             </StackLayout>
         </ContentPage.Content>
 

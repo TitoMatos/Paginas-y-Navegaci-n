@@ -30,8 +30,32 @@ namespace Tarea5
             if (e.SelectedItem != null)
             {
                 var element = e.SelectedItem as Elemento;
-                DisplayAlert("Tarea Pendiente", "NOMBRE\n" + element.Nombre + "\n\nDESCRIPCIÓN\n" + element.Descripcion + "\n\nFECHA\n" + "Todavía no funciona" + "\n\nDÍAS RESTANTES\n" + "6" + " días restantes.", "Marcar como completada");
+                DisplayAlert("Tarea Pendiente", "NOMBRE\n" + element.Nombre + "\n\nDESCRIPCIÓN\n" + element.Descripcion + "\n\nFECHA\n" + element.Fecha + "\n\nDÍAS RESTANTES\n" + element.DiasRestantes + " días restantes.", "Marcar como completada");
             }
+        }
+
+        private async void Guardar_Clicked(object sender, EventArgs e)
+        {
+            if (Nombre.Text == "")
+            {
+                await DisplayAlert("¡Error!", "No has completado el campo Nombre correctamente. \n\n Vuelva a intentarlo.", "Aceptar");
+            }
+            else if (Apellido.Text == "")
+            {
+                await DisplayAlert("¡Error!", "No has completado el campo Apellido correctamente. \n\n Vuelva a intentarlo.", "Aceptar");
+            }
+            else if (Nacionalidad.Text == "")
+            {
+                await DisplayAlert("¡Error!", "No has completado el campo Nacionalidad correctamente. \n\n Vuelva a intentarlo.", "Aceptar");
+            }
+            else
+            {
+                await DisplayAlert("Datos Guardados", "Nombre\n" + Nombre.Text + "\n\nApellido\n" + Apellido.Text + "\n\nNacionalidad\n" + Nacionalidad.Text + "\n\nFecha de Nacimiento\n" + Fecha.Date + "\n\nEstado Civil\n" + picker1.SelectedItem, "Aceptar");
+                Nombre.Text = "";
+                Apellido.Text = "";
+                Nacionalidad.Text = "";
+            }
+
         }
     }
 }
