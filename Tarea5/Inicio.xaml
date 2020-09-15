@@ -7,12 +7,37 @@
              x:Class="Tarea5.Inicio">
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Lista de Tareas Pendientes">
-        
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="" FontSize="Large"/>
+                <Label Text="Lista de Tareas Pendientes" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Label Text="" FontSize="Medium" />
+
+                <ListView x:Name="ListElements">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Nombre}" Detail="{Binding Descripcion}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </ContentPage.Content>
     </ContentPage>
-    
-    
-    
+
+
+
     <ContentPage Title="Información Personal">
-    
+
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Aquí va el formulario." />
+            </StackLayout>
+        </ContentPage.Content>
+
+
     </ContentPage>
+
+
 </TabbedPage>

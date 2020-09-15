@@ -20,10 +20,14 @@ namespace Tarea5
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+
+            //admin@uteco.edu.do
+            //Password
+
             if (Email.Text == "admin@uteco.edu.do" & Contraseña.Text == "Password")
             {
                  //await Navigation.PushAsync(new Home());
-                 await Navigation.PushModalAsync(new MasterDetailPage1Master());
+                 await Navigation.PushModalAsync(new Inicio());
             }
             else
             {
